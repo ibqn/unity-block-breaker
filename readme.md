@@ -1,3 +1,3 @@
-## Guke Wizzard is a Unity based game
+## Block breaker is a Unity based game
 
 ![Screenshot af the app](screenshot.png)
