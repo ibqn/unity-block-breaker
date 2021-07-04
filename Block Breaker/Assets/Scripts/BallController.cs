@@ -5,15 +5,42 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
     [SerializeField] PaddleController paddle;
-    // Start is called before the first frame update
+
+    [SerializeField] Vector2 startVelocity;
+    private Vector3 paddleToBall;
+
+    private bool ballLaunched;
+
     void Start()
     {
+        paddleToBall = transform.position - paddle.transform.position;
+        paddleToBall.x = 0f;
 
+        ballLaunched = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!ballLaunched)
+        {
+            LockBallToPaddle();
+            LaunchBallOnClick();
+        }
+    }
+
+    private void LaunchBallOnClick()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            ballLaunched = true;
+            GetComponent<Rigidbody2D>().velocity = startVelocity;
+        }
+    }
+
+    private void LockBallToPaddle()
+    {
+        transform.position = paddle.transform.position + paddleToBall;
 
     }
 }
