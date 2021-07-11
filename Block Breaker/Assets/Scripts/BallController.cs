@@ -43,4 +43,12 @@ public class BallController : MonoBehaviour
         transform.position = paddle.transform.position + paddleToBall;
 
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (ballLaunched)
+        {
+            GetComponent<AudioSource>().Play();
+        }
+    }
 }
