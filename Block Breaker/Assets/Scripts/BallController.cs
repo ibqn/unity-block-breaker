@@ -13,6 +13,10 @@ public class BallController : MonoBehaviour
 
     private AudioSource audioSource;
 
+    [SerializeField] AudioClip wallSound;
+    [SerializeField] AudioClip paddleSound;
+    [SerializeField] AudioClip blockSound;
+
     void Start()
     {
         paddleToBall = transform.position - paddle.transform.position;
@@ -48,11 +52,22 @@ public class BallController : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (ballLaunched)
         {
-            audioSource.Play();
+            var clip = collision.gameObject.tag switch
+            {
+                "Paddle" => paddleSound,
+                "Block" => blockSound,
+                "Wall" => wallSound,
+                _ => null
+            };
+
+            if (clip != null)
+            {
+                audioSource.PlayOneShot(clip);
+            }
         }
     }
 }

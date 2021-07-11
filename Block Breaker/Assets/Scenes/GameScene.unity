@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 107672008}
   m_Layer: 0
   m_Name: Right Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -317,6 +317,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paddle: {fileID: 1215777497}
   startVelocity: {x: 2, y: 15}
+  wallSound: {fileID: 8300000, guid: c3c04f104c63ee24387755f8544be3b4, type: 3}
+  paddleSound: {fileID: 8300000, guid: 81bad9d6ef136dc8a875143df3eca86d, type: 3}
+  blockSound: {fileID: 8300000, guid: 491d88023148f35dc9849f102520351f, type: 3}
 --- !u!82 &109651144
 AudioSource:
   m_ObjectHideFlags: 0
@@ -327,7 +330,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 81bad9d6ef136dc8a875143df3eca86d, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -580,7 +583,7 @@ GameObject:
   - component: {fileID: 1215777497}
   m_Layer: 0
   m_Name: Paddle
-  m_TagString: Untagged
+  m_TagString: Paddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -709,7 +712,7 @@ GameObject:
   - component: {fileID: 1448118173}
   m_Layer: 0
   m_Name: Roof
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -910,7 +913,7 @@ GameObject:
   - component: {fileID: 1914067157}
   m_Layer: 0
   m_Name: Left Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
