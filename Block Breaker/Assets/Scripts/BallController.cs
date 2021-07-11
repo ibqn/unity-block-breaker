@@ -11,12 +11,16 @@ public class BallController : MonoBehaviour
 
     private bool ballLaunched;
 
+    private AudioSource audioSource;
+
     void Start()
     {
         paddleToBall = transform.position - paddle.transform.position;
         paddleToBall.x = 0f;
 
         ballLaunched = false;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,7 +52,7 @@ public class BallController : MonoBehaviour
     {
         if (ballLaunched)
         {
-            GetComponent<AudioSource>().Play();
+            audioSource.Play();
         }
     }
 }
